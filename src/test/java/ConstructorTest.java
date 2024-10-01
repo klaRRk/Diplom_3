@@ -7,14 +7,11 @@ import webpages.*;
 import java.util.concurrent.TimeUnit;
 
 public class ConstructorTest extends Browser {
-    private Client client;
-
 
     @Before
     public void setUp() {
         driver.get(Methods.BASE_URL);
         RestAssured.baseURI = Methods.BASE_URL;
-        client = FakeClient.getRandomClient();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
